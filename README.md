@@ -21,4 +21,8 @@ Setup
 
 Delegate
 --------------
-You can respond to delegate methods using the PhoneNumberViewControllerDelegate protocol
+You can respond to delegate methods using the `PhoneNumberViewControllerDelegate` protocol
+
+Country Selector
+-------------
+You can manually present a `CountriesViewController` to present a list of all countries and their phone extensions to the user
