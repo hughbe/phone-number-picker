@@ -4,7 +4,7 @@ A simple and easy to use view controller enabling you to enter a phone number wi
 Screenshots
 --------------
 ![alt text](https://github.com/hughbe/PhoneNumberPicker/blob/master/resources/screenshots/1.png "Screenshot 1")
-![alt text](https://github.com/hughbe/PhoneNumberPicker/blob/masterresources/screenshots/2.png "Screenshot 2")
+![alt text](https://github.com/hughbe/PhoneNumberPicker/blob/master/resources/screenshots/2.png "Screenshot 2")
 
 Setup
 --------------
