@@ -114,7 +114,7 @@
 				1E8723261B9CC00700FB3802 /* Controller */,
 			);
 			name = Source;
-			path = ../Source;
+			path = ../src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
