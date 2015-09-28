@@ -55,7 +55,7 @@ public final class CountriesViewController: UITableViewController, UISearchContr
         searchController.searchBar.sizeToFit()
         
         tableView.tableHeaderView = searchController.searchBar
-        tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
         definesPresentationContext = true
     }
     
@@ -68,7 +68,7 @@ public final class CountriesViewController: UITableViewController, UISearchContr
     }
     
     public func updateSearchResultsForSearchController(searchController: UISearchController) {
-        let searchString = searchController.searchBar.text
+        let searchString = searchController.searchBar.text ?? ""
         searchForText(searchString)
         tableView.reloadData()
     }
@@ -100,8 +100,8 @@ public final class CountriesViewController: UITableViewController, UISearchContr
         tableView.reloadData()
         
         if let selectedCountry = selectedCountry {
-            for (index, countries) in enumerate(unfilteredCountries) {
-                if let countryIndex = find(countries, selectedCountry) {
+            for (index, countries) in unfilteredCountries.enumerate() {
+                if let countryIndex = countries.indexOf(selectedCountry) {
                     let indexPath = NSIndexPath(forRow: countryIndex, inSection: index)
                     tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Middle, animated: true)
                     break
@@ -119,7 +119,7 @@ public final class CountriesViewController: UITableViewController, UISearchContr
     }
     
     override public  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
         let country = filteredCountries[indexPath.section][indexPath.row]
         
@@ -143,18 +143,18 @@ public final class CountriesViewController: UITableViewController, UISearchContr
         if section == 0 {
             return ""
         }
-        return UILocalizedIndexedCollation.currentCollation().sectionTitles[section - 1] as? String
+        return UILocalizedIndexedCollation.currentCollation().sectionTitles[section - 1]
     }
     
-    override public func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
+    public override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
         return searchController.active ? nil : UILocalizedIndexedCollation.currentCollation().sectionTitles
     }
     
-    override public func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
+    public override func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
         return UILocalizedIndexedCollation.currentCollation().sectionForSectionIndexTitleAtIndex(index + 1)
     }
     
-    override public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    public override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         delegate?.countriesViewController(self, didSelectCountry: filteredCountries[indexPath.section][indexPath.row])
     }
@@ -165,7 +165,7 @@ public final class CountriesViewController: UITableViewController, UISearchContr
 }
 
 private func partionedArray<T: AnyObject>(array: [T], usingSelector selector: Selector) -> [[T]] {
-    let collation = UILocalizedIndexedCollation.currentCollation() as! UILocalizedIndexedCollation
+    let collation = UILocalizedIndexedCollation.currentCollation() 
     let numberOfSectionTitles = collation.sectionTitles.count
     
     var unsortedSections: [[T]] = Array(count: numberOfSectionTitles, repeatedValue: [])

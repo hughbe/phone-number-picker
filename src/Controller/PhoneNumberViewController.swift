@@ -45,7 +45,13 @@ public final class PhoneNumberViewController: UIViewController, CountriesViewCon
     
     public var delegate: PhoneNumberViewControllerDelegate?
     
-    public var phoneNumber: String { return countryTextField.text + phoneNumberTextField.text }
+    public var phoneNumber: String? {
+        if let countryText = countryTextField.text, phoneNumberText = phoneNumberTextField.text where !countryText.isEmpty && !phoneNumberText.isEmpty {
+            return countryText + phoneNumberText
+        }
+        return nil
+    }
+    
     public var country = Country.currentCountry
     
     //MARK: Lifecycle
@@ -80,8 +86,8 @@ public final class PhoneNumberViewController: UIViewController, CountriesViewCon
     }
     
     @IBAction private func textFieldDidChangeText(sender: UITextField) {
-        if sender == countryTextField {
-            country = Countries.countryFromPhoneExtension(countryTextField.text)
+        if let countryText = sender.text where sender == countryTextField {
+            country = Countries.countryFromPhoneExtension(countryText)
         }
         updateTitle()
     }
@@ -101,8 +107,8 @@ public final class PhoneNumberViewController: UIViewController, CountriesViewCon
         }
         
         var title = "Your Phone Number"
-        if !countryTextField.text.isEmpty && !phoneNumberTextField.text.isEmpty  {
-            title = phoneNumber
+        if let newTitle = phoneNumber  {
+            title = newTitle
         }
         navigationItem.title = title
         
@@ -113,8 +119,8 @@ public final class PhoneNumberViewController: UIViewController, CountriesViewCon
         if countryTextField.text == "+" {
             countryTextField.text = ""
         }
-        else if !countryTextField.text.hasPrefix("+") && !countryTextField.text.isEmpty {
-            countryTextField.text = "+" + countryTextField.text
+        else if let countryText = countryTextField.text where !countryText.hasPrefix("+") && !countryText.isEmpty {
+            countryTextField.text = "+" + countryText
         }
     }
     
@@ -122,7 +128,9 @@ public final class PhoneNumberViewController: UIViewController, CountriesViewCon
         if !countryIsValid || !phoneNumberIsValid {
             return
         }
-        delegate?.phoneNumberViewController(self, didEnterPhoneNumber: phoneNumber)
+        if let phoneNumber = phoneNumber {
+            delegate?.phoneNumberViewController(self, didEnterPhoneNumber: phoneNumber)
+        }
     }
     
     @IBAction private func cancel(sender: UIBarButtonItem) {
@@ -135,13 +143,17 @@ public final class PhoneNumberViewController: UIViewController, CountriesViewCon
     
     //MARK: Validation
     public var countryIsValid: Bool {
-        let countryCodeLength = countryTextField.text.length
-        return country != Country.emptyCountry && countryCodeLength > 1 && countryCodeLength < 5
+        if let countryCodeLength = countryTextField.text?.length {
+            return country != Country.emptyCountry && countryCodeLength > 1 && countryCodeLength < 5
+        }
+        return false
     }
     
     public var phoneNumberIsValid: Bool {
-        let phoneNumberLength = phoneNumberTextField.text.length
-        return !phoneNumberTextField.text.isEmpty && phoneNumberLength > 5 && phoneNumberLength < 15
+        if let phoneNumberLength = phoneNumberTextField.text?.length {
+            return phoneNumberLength > 5 && phoneNumberLength < 15
+        }
+        return false
     }
     
     private func validate() {
@@ -154,6 +166,6 @@ public final class PhoneNumberViewController: UIViewController, CountriesViewCon
 
 private extension String {
     var length: Int {
-        return count(utf16)
+        return utf16.count
     }
 }

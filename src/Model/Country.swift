@@ -12,7 +12,7 @@ public func ==(lhs: Country, rhs: Country) -> Bool {
     return lhs.countryCode == rhs.countryCode
 }
 
-public class Country: Equatable {
+public class Country: NSObject {
     public static var emptyCountry: Country { return Country(countryCode: "", phoneExtension: "", isMain: true) }
     
     public static var currentCountry: Country {
