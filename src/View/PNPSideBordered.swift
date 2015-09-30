@@ -72,19 +72,19 @@ private class PhoneNumberPickerSideBorderedButton: UIButton  {
 
 private extension UIView {
     func pnpAddTopBorder(width: CGFloat, color: UIColor = UIColor.blackColor()) {
-        addBorder(color, frame: CGRect(x: 0, y: 0, width: frame.width, height: width))
+        pnpAddBorder(color, frame: CGRect(x: 0, y: 0, width: frame.width, height: width))
     }
     
     func pnpAddBottomBorder(width: CGFloat, color: UIColor = UIColor.blackColor()) {
-        addBorder(color, frame: CGRect(x: 0, y: frame.height - width, width: frame.width, height: width))
+        pnpAddBorder(color, frame: CGRect(x: 0, y: frame.height - width, width: frame.width, height: width))
     }
     
     func pnpAddLeftBorder(width: CGFloat, color: UIColor = UIColor.blackColor()) {
-        addBorder(color, frame: CGRect(x: 0, y: 0, width: width, height: frame.height))
+        pnpAddBorder(color, frame: CGRect(x: 0, y: 0, width: width, height: frame.height))
     }
     
     func pnpAddRightBorder(width: CGFloat, color: UIColor = UIColor.blackColor()) {
-        addBorder(color, frame: CGRect(x: frame.width / 2 + 8, y: 0, width: width, height: frame.height))
+        pnpAddBorder(color, frame: CGRect(x: frame.width / 2 + 8, y: 0, width: width, height: frame.height))
     }
     
     private func pnpAddBorder(color: UIColor, frame: CGRect) {
