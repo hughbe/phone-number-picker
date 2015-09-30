@@ -26,5 +26,4 @@ private class PNPMenuDisabledTextField: UITextField {
     private override func editingRectForBounds(bounds: CGRect) -> CGRect {
         return bounds.rectByInsetting(dx: 0, dy: editingRectDeltaY)
     }
-
 }
