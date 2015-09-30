@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -77,10 +76,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZC-Ri-TrF" userLabel="Container View">
                                 <rect key="frame" x="4" y="250" width="592" height="100"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3c-p9-alZ" userLabel="Country View" customClass="SideBorderedView" customModule="Slater" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3c-p9-alZ" userLabel="Country View" customClass="PNPSideBorderedView">
                                         <rect key="frame" x="16" y="0.0" width="560" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2r-U4-ukL" customClass="HighlightButton" customModule="Slater" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2r-U4-ukL" customClass="PNPHighlightButton">
                                                 <rect key="frame" x="-16" y="0.0" width="592" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="United Kingdom">
@@ -113,13 +112,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0B2-dd-mLB" userLabel="Phone Number View" customClass="SideBorderedView" customModule="Slater" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0B2-dd-mLB" userLabel="Phone Number View" customClass="PNPSideBorderedView">
                                         <rect key="frame" x="16" y="50" width="560" height="50"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCj-Er-Ot3" userLabel="Country Code View" customClass="SideBorderedView" customModule="Slater" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCj-Er-Ot3" userLabel="Country Code View" customClass="PNPSideBorderedView">
                                                 <rect key="frame" x="20" y="0.0" width="108" height="50"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LEj-ce-uD5" userLabel="Country Text Field" customClass="MenuDisabledTextField" customModule="Slater" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LEj-ce-uD5" userLabel="Country Text Field" customClass="PNPMenuDisabledTextField">
                                                         <rect key="frame" x="0.0" y="0.0" width="106" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
@@ -153,7 +152,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showsRightBorder" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="your phone number" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FbR-zx-AFK" userLabel="Phone Number Text Field" customClass="MenuDisabledTextField" customModule="Slater" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="your phone number" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FbR-zx-AFK" userLabel="Phone Number Text Field" customClass="PNPMenuDisabledTextField">
                                                 <rect key="frame" x="130" y="0.0" width="430" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>

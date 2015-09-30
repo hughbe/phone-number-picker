@@ -1,5 +1,5 @@
 //
-//  SideBordered.swift
+//  PNPSideBordered.swift
 //  UIComponents
 //
 //  Created by Hugh Bellamy on 14/06/2015.
@@ -7,7 +7,7 @@
 //
 
 @IBDesignable
-private class SideBorderedView: UIView  {
+private class PNPSideBorderedView: UIView  {
     @IBInspectable private var borderWidth: CGFloat = 0
     @IBInspectable private var borderColor: UIColor = UIColor.blackColor()
     
@@ -39,7 +39,7 @@ private class SideBorderedView: UIView  {
 }
 
 @IBDesignable
-private class SideBorderedButton: UIButton  {
+private class PhoneNumberPickerSideBorderedButton: UIButton  {
     @IBInspectable private var borderWidth: CGFloat = 0
     @IBInspectable private var borderColor: UIColor = UIColor.blackColor()
     
@@ -70,7 +70,7 @@ private class SideBorderedButton: UIButton  {
     }
 }
 
-extension UIView {
+private extension UIView {
     func addTopBorder(width: CGFloat, color: UIColor = UIColor.blackColor()) {
         addBorder(color, frame: CGRect(x: 0, y: 0, width: frame.width, height: width))
     }

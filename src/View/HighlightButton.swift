@@ -1,5 +1,5 @@
 //
-//  HighlightButton.swift
+//  PNPHighlightButton.swift
 //  UIComponents
 //
 //  Created by Hugh Bellamy on 14/06/2015.
@@ -7,7 +7,7 @@
 //
 
 @IBDesignable
-class HighlightButton: UIButton {
+class PNPHighlightButton: UIButton {
     private var normalBackgroundColor: UIColor!
     
     @IBInspectable var highlightedBackgroundColor: UIColor = UIColor.lightGrayColor()

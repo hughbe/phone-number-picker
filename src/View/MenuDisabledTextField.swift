@@ -1,5 +1,5 @@
 //
-//  MenuDisabledTextField.swift
+//  PNPMenuDisabledTextField.swift
 //  UIComponents
 //
 //  Created by Hugh Bellamy on 05/09/2015.
@@ -7,7 +7,7 @@
 //
 
 @IBDesignable
-private class MenuDisabledTextField: UITextField {
+private class PNPMenuDisabledTextField: UITextField {
     @IBInspectable private var menuEnabled: Bool = false
     @IBInspectable private var canPositionCaretAtStart: Bool = true
     @IBInspectable private var editingRectDeltaY: CGFloat = 0
