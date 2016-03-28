@@ -6,22 +6,28 @@ Screenshots
 ![alt text](https://github.com/hughbe/PhoneNumberPicker/blob/master/resources/screenshots/1.png "Screenshot 1")
 ![alt text](https://github.com/hughbe/PhoneNumberPicker/blob/master/resources/screenshots/2.png "Screenshot 2")
 
+Installation
+--------------
+Drag and drop the *src* folder to your project
+
 Setup
 --------------
-- 1: Create the PhoneNumberViewController
-	`let phoneNumberViewController = PhoneNumberViewController.standardController()`
-- 2: Set delegate (optional)
-	`phoneNumberViewController.delegate = self`
-- 3: Present the PhoneNumberViewController (Modally)
-	`presentViewController(phoneNumberViewController, animated: true, completion: nil)`
-- 4: Present the PhoneNumberViewController (Navigation Controller)
-	`phoneNumberViewController.cancelBarButtonItemHidden = true`
-	`navigationController?.pushViewController(phoneNumberViewController, animated: true)`
+``` swift
+// 1. Add the protocol PhoneNumberViewControllerDelegate
+class ViewController: UIViewController,PhoneNumberViewControllerDelegate {
 
 
-Delegate
---------------
-You can respond to delegate methods using the `PhoneNumberViewControllerDelegate` protocol
+func presentPhoneNumberViewController { //Your function. Can be any name
+   // 2. Create the PhoneNumberViewController
+   let phoneNumberViewController = PhoneNumberViewController.standardController()
+
+   // 3. Set the delegate
+   phoneNumberViewController.delegate = self
+
+   // 4. Present the PhoneNumberViewController (Navigation Controller)
+   navigationController?.pushViewController(phoneNumberViewController, animated: true)
+}
+```
 
 Country Selector
 -------------
