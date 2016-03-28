@@ -5,6 +5,7 @@
 //  Created by Hugh Bellamy on 05/09/2015.
 //  Copyright (c) 2015 Hugh Bellamy. All rights reserved.
 //
+import UIKit
 
 @IBDesignable
 private class PNPMenuDisabledTextField: UITextField {
