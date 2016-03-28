@@ -5,6 +5,7 @@
 //  Created by Hugh Bellamy on 14/06/2015.
 //  Copyright (c) 2015 Hugh Bellamy. All rights reserved.
 //
+import UIKit
 
 @IBDesignable
 class PNPHighlightButton: UIButton {
