@@ -111,7 +111,7 @@ public class Countries {
         
         countries.append(Country(countryCode: "HT", phoneExtension: "509", isMain: true))
         countries.append(Country(countryCode: "HN", phoneExtension: "504", isMain: true))
-        countries.append(Country(countryCode: "HK", phoneExtension: "652", isMain: true))
+        countries.append(Country(countryCode: "HK", phoneExtension: "852", isMain: true))
         countries.append(Country(countryCode: "HU", phoneExtension: "36", isMain: true))
         
         countries.append(Country(countryCode: "IS", phoneExtension: "354", isMain: true))
