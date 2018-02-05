@@ -284,7 +284,7 @@ public class Countries {
         }()
     
     public class func countryFromPhoneExtension(phoneExtension: String) -> Country {
-        let phoneExtension = (phoneExtension as NSString).stringByReplacingOccurrencesOfString("+", withString: "")
+        let phoneExtension = (phoneExtension as NSString).replacingOccurrences(of: "+", with: "")
         for country in countries {
             if country.isMain && phoneExtension == country.phoneExtension {
                 return country
@@ -303,6 +303,6 @@ public class Countries {
     }
     
     public class func countriesFromCountryCodes(countryCodes: [String]) -> [Country] {
-        return countryCodes.map { Countries.countryFromCountryCode($0) }
+        return countryCodes.map { Countries.countryFromCountryCode(countryCode: $0) }
     }
 }

@@ -16,7 +16,7 @@ public protocol PhoneNumberViewControllerDelegate {
 
 public final class PhoneNumberViewController: UIViewController, CountriesViewControllerDelegate {
     public class func standardController() -> PhoneNumberViewController {
-        return UIStoryboard(name: "PhoneNumberPicker", bundle: nil).instantiateViewControllerWithIdentifier("PhoneNumber") as! PhoneNumberViewController
+        return UIStoryboard(name: "PhoneNumberPicker", bundle: nil).instantiateViewController(withIdentifier: "PhoneNumber") as! PhoneNumberViewController
     }
     
     @IBOutlet weak public var countryButton: UIButton!
@@ -46,7 +46,7 @@ public final class PhoneNumberViewController: UIViewController, CountriesViewCon
     public var delegate: PhoneNumberViewControllerDelegate?
     
     public var phoneNumber: String? {
-        if let countryText = countryTextField.text, phoneNumberText = phoneNumberTextField.text where !countryText.isEmpty && !phoneNumberText.isEmpty {
+        if let countryText = countryTextField.text, let phoneNumberText = phoneNumberTextField.text, !countryText.isEmpty && !phoneNumberText.isEmpty {
             return countryText + phoneNumberText
         }
         return nil
@@ -80,14 +80,14 @@ public final class PhoneNumberViewController: UIViewController, CountriesViewCon
     public func countriesViewControllerDidCancel(countriesViewController: CountriesViewController) { }
     
     public func countriesViewController(countriesViewController: CountriesViewController, didSelectCountry country: Country) {
-        navigationController?.popViewControllerAnimated(true)
+        navigationController?.popViewController(animated: true)
         self.country = country
         updateCountry()
     }
     
     @IBAction private func textFieldDidChangeText(sender: UITextField) {
-        if let countryText = sender.text where sender == countryTextField {
-            country = Countries.countryFromPhoneExtension(countryText)
+        if let countryText = sender.text, sender == countryTextField {
+            country = Countries.countryFromPhoneExtension(phoneExtension: countryText)
         }
         updateTitle()
     }
@@ -101,9 +101,9 @@ public final class PhoneNumberViewController: UIViewController, CountriesViewCon
     private func updateTitle() {
         updateCountryTextField()
         if countryTextField.text == "+" {
-            countryButton.setTitle("Select From List", forState: .Normal)
+            countryButton.setTitle("Select From List", for: [])
         } else {
-            countryButton.setTitle(country.name, forState: .Normal)
+            countryButton.setTitle(country.name, for: [])
         }
         
         var title = "Your Phone Number"
@@ -119,7 +119,7 @@ public final class PhoneNumberViewController: UIViewController, CountriesViewCon
         if countryTextField.text == "+" {
             countryTextField.text = ""
         }
-        else if let countryText = countryTextField.text where !countryText.hasPrefix("+") && !countryText.isEmpty {
+        else if let countryText = countryTextField.text, !countryText.hasPrefix("+") && !countryText.isEmpty {
             countryTextField.text = "+" + countryText
         }
     }
@@ -129,12 +129,12 @@ public final class PhoneNumberViewController: UIViewController, CountriesViewCon
             return
         }
         if let phoneNumber = phoneNumber {
-            delegate?.phoneNumberViewController(self, didEnterPhoneNumber: phoneNumber)
+            delegate?.phoneNumberViewController(phoneNumberViewController: self, didEnterPhoneNumber: phoneNumber)
         }
     }
     
     @IBAction private func cancel(sender: UIBarButtonItem) {
-        delegate?.phoneNumberViewControllerDidCancel(self)
+        delegate?.phoneNumberViewControllerDidCancel(phoneNumberViewController: self)
     }
     
     @IBAction private func tappedBackground(sender: UITapGestureRecognizer) {
@@ -160,7 +160,7 @@ public final class PhoneNumberViewController: UIViewController, CountriesViewCon
         let validCountry = countryIsValid
         let validPhoneNumber = phoneNumberIsValid
         
-        doneBarButtonItem.enabled = validCountry && validPhoneNumber
+        doneBarButtonItem.isEnabled = validCountry && validPhoneNumber
     }
 }
 

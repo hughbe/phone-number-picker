@@ -16,8 +16,8 @@ public class Country: NSObject {
     public static var emptyCountry: Country { return Country(countryCode: "", phoneExtension: "", isMain: true) }
     
     public static var currentCountry: Country {
-        if let countryCode = NSLocale.currentLocale().objectForKey(NSLocaleCountryCode) as? String {
-            return Countries.countryFromCountryCode(countryCode)
+        if let countryCode = (NSLocale.current as NSLocale).object(forKey: NSLocale.Key.countryCode) as? String {
+            return Countries.countryFromCountryCode(countryCode: countryCode)
         }
         return Country.emptyCountry
     }
@@ -33,6 +33,6 @@ public class Country: NSObject {
     }
     
     @objc public var name: String {
-        return NSLocale.currentLocale().displayNameForKey(NSLocaleCountryCode, value: countryCode) ?? "Invalid country code"
+        return (NSLocale.current as NSLocale).displayName(forKey: NSLocale.Key.countryCode, value: countryCode) ?? "Invalid country code"
     }
 }

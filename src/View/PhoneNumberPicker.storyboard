@@ -1,39 +1,44 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Your Country-->
         <scene sceneID="Uk2-Kx-8zT">
             <objects>
-                <tableViewController storyboardIdentifier="Countries" nibName="" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fi1-xo-fj1" customClass="CountriesViewController" customModule="Slater" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Countries" nibName="" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fi1-xo-fj1" customClass="CountriesViewController" customModule="PhoneNumberPickerExample" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="TG3-bR-HZb" userLabel="Countries Table View">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="8nn-Js-dfr" detailTextLabel="q0r-k2-tdU" style="IBUITableViewCellStyleValue1" id="Wlz-Sp-gIv">
-                                <rect key="frame" x="0.0" y="86" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wlz-Sp-gIv" id="fRd-0D-xR3">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8nn-Js-dfr">
-                                            <rect key="frame" x="15" y="12" width="32" height="20"/>
+                                            <rect key="frame" x="16" y="12" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q0r-k2-tdU">
-                                            <rect key="frame" x="543" y="12" width="42" height="20"/>
+                                            <rect key="frame" x="317.5" y="12" width="41.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -41,14 +46,14 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="Fi1-xo-fj1" id="2gn-7x-fPy"/>
-                            <outlet property="delegate" destination="Fi1-xo-fj1" id="bme-Hy-iZP"/>
+                            <outlet property="dataSource" destination="Fi1-xo-fj1" id="od8-k9-PhV"/>
+                            <outlet property="delegate" destination="Fi1-xo-fj1" id="9La-ER-xNH"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Country" id="i1L-5U-721">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="cMT-A6-qS7">
                             <connections>
-                                <action selector="cancel:" destination="Fi1-xo-fj1" id="c2t-qq-TFG"/>
+                                <action selector="cancelWithSender:" destination="Fi1-xo-fj1" id="V17-Ga-DXF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -64,38 +69,38 @@
         <!--Phone Number-->
         <scene sceneID="e0v-Ex-aj4">
             <objects>
-                <viewController storyboardIdentifier="PhoneNumber" title="Phone Number" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9lj-PJ-9S6" customClass="PhoneNumberViewController" customModule="Slater" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhoneNumber" title="Phone Number" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9lj-PJ-9S6" customClass="PhoneNumberViewController" customModule="PhoneNumberPickerExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tha-xM-Rwq"/>
                         <viewControllerLayoutGuide type="bottom" id="uGp-ZO-N0F"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gva-mG-zNp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZC-Ri-TrF" userLabel="Container View">
-                                <rect key="frame" x="4" y="250" width="592" height="100"/>
+                                <rect key="frame" x="0.0" y="283.5" width="375" height="100"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3c-p9-alZ" userLabel="Country View" customClass="PNPSideBorderedView">
-                                        <rect key="frame" x="16" y="0.0" width="560" height="50"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3c-p9-alZ" userLabel="Country View" customClass="PNPSideBorderedView" customModule="PhoneNumberPickerExample" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="0.0" width="343" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2r-U4-ukL" customClass="PNPHighlightButton">
-                                                <rect key="frame" x="-16" y="0.0" width="592" height="50"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2r-U4-ukL" customClass="PNPHighlightButton" customModule="PhoneNumberPickerExample" customModuleProvider="target">
+                                                <rect key="frame" x="-16" y="0.0" width="375" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="United Kingdom">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackgroundColor">
-                                                        <color key="value" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="value" red="0.85000002384185791" green="0.85000002384185791" blue="0.85000002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="changeCountry:" destination="9lj-PJ-9S6" eventType="touchUpInside" id="0GU-gH-7ku"/>
+                                                    <action selector="changeCountryWithSender:" destination="9lj-PJ-9S6" eventType="touchUpInside" id="4zw-ku-baa"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="q2r-U4-ukL" secondAttribute="bottom" id="9d6-QS-NTn"/>
                                             <constraint firstItem="q2r-U4-ukL" firstAttribute="top" secondItem="M3c-p9-alZ" secondAttribute="top" id="9eG-P6-qPa"/>
@@ -108,19 +113,19 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="showsTopBorder" value="YES"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="0.80000000000000004" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="value" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0B2-dd-mLB" userLabel="Phone Number View" customClass="PNPSideBorderedView">
-                                        <rect key="frame" x="16" y="50" width="560" height="50"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0B2-dd-mLB" userLabel="Phone Number View" customClass="PNPSideBorderedView" customModule="PhoneNumberPickerExample" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="50" width="343" height="50"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCj-Er-Ot3" userLabel="Country Code View" customClass="PNPSideBorderedView">
-                                                <rect key="frame" x="20" y="0.0" width="108" height="50"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCj-Er-Ot3" userLabel="Country Code View" customClass="PNPSideBorderedView" customModule="PhoneNumberPickerExample" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="0.0" width="64" height="50"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LEj-ce-uD5" userLabel="Country Text Field" customClass="PNPMenuDisabledTextField">
-                                                        <rect key="frame" x="0.0" y="0.0" width="106" height="50"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LEj-ce-uD5" userLabel="Country Text Field" customClass="PNPMenuDisabledTextField" customModule="PhoneNumberPickerExample" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="50"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
@@ -135,7 +140,7 @@
                                                         </connections>
                                                     </textField>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="LEj-ce-uD5" secondAttribute="trailing" constant="2" id="4r9-YR-R2U"/>
                                                     <constraint firstAttribute="bottom" secondItem="LEj-ce-uD5" secondAttribute="bottom" id="GTo-eA-9AK"/>
@@ -147,13 +152,13 @@
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" white="0.80000000000000004" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="value" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showsRightBorder" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="your phone number" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FbR-zx-AFK" userLabel="Phone Number Text Field" customClass="PNPMenuDisabledTextField">
-                                                <rect key="frame" x="130" y="0.0" width="430" height="50"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="your phone number" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FbR-zx-AFK" userLabel="Phone Number Text Field" customClass="PNPMenuDisabledTextField" customModule="PhoneNumberPickerExample" customModuleProvider="target">
+                                                <rect key="frame" x="86" y="0.0" width="257" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <userDefinedRuntimeAttributes>
@@ -168,7 +173,7 @@
                                                 </connections>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="FbR-zx-AFK" secondAttribute="trailing" id="EM3-j5-Dwf"/>
                                             <constraint firstItem="sCj-Er-Ot3" firstAttribute="top" secondItem="0B2-dd-mLB" secondAttribute="top" id="GU1-8e-Jq4"/>
@@ -184,14 +189,14 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="0.80000000000000004" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="value" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="showsTopBorder" value="YES"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="showsBottomBorder" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="0B2-dd-mLB" firstAttribute="leading" secondItem="nZC-Ri-TrF" secondAttribute="leading" constant="16" id="1py-qB-CaD"/>
                                     <constraint firstAttribute="trailing" secondItem="0B2-dd-mLB" secondAttribute="trailing" constant="16" id="5Va-dw-Zi2"/>
@@ -205,7 +210,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="nZC-Ri-TrF" secondAttribute="centerY" id="FYQ-tP-set"/>
@@ -220,12 +225,12 @@
                     <navigationItem key="navigationItem" title="Your Phone Number" id="Cv4-0p-aZC">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="aWC-dL-eb7">
                             <connections>
-                                <action selector="cancel:" destination="9lj-PJ-9S6" id="K4m-si-ZRE"/>
+                                <action selector="cancelWithSender:" destination="9lj-PJ-9S6" id="y5e-9k-rdd"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="j1Z-Cn-Y8F">
                             <connections>
-                                <action selector="done:" destination="9lj-PJ-9S6" id="eRp-yr-wVk"/>
+                                <action selector="doneWithSender:" destination="9lj-PJ-9S6" id="Vs6-JD-tJx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
