@@ -136,7 +136,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="textFieldDidChangeText:" destination="9lj-PJ-9S6" eventType="editingChanged" id="bN4-BY-3mX"/>
+                                                            <action selector="textFieldDidChangeTextWithSender:" destination="9lj-PJ-9S6" eventType="editingChanged" id="ff9-de-5yS"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -169,7 +169,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="textFieldDidChangeText:" destination="9lj-PJ-9S6" eventType="editingChanged" id="JUw-bv-Hhw"/>
+                                                    <action selector="textFieldDidChangeTextWithSender:" destination="9lj-PJ-9S6" eventType="editingChanged" id="1xw-pv-vlT"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -247,7 +247,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L1r-8H-34h" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Ufo-fL-7Dk">
                     <connections>
-                        <action selector="tappedBackground:" destination="9lj-PJ-9S6" id="HkF-WV-1N9"/>
+                        <action selector="tappedBackgroundWithSender:" destination="9lj-PJ-9S6" id="3S1-8M-oR6"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
